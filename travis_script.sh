@@ -1,6 +1,5 @@
 cd build
 chmod +x premake/linux/premake5
-./premake/linux/premake5 gmake
 
-cd gmake
-make
+premake/linux/premake5 gmake
+gmake/make
