@@ -1,0 +1,7 @@
+language: c++
+
+before_install:
+    - chmod +x travis_script.sh
+
+script:
+    - ./travis_script.sh
