@@ -48,23 +48,20 @@ function Playground.GenerateProject()
             path.join( Playground.SrcDir, "**.cxx" )
         }
 
-        configuration( "Debug" )
+        configuration { "Debug" }
             defines { "DEBUG" }
             flags { "Symbols" }
 
-        configuration( "Release" )
+        configuration { "Release" }
             defines { "NDEBUG" }
             flags { "Optimize" }
 
-        Playground.SetupPostBuildExecute()
-end
+        configuration { "gmake" }
+            postbuildcommands { "$(TARGET)" }
+            buildoptions { "-std=c++0x" }
 
-function Playground.SetupPostBuildExecute()
-    configuration { "gmake" }
-		postbuildcommands { "$(TARGET)" }
-
-    configuration { "vs*" }
-        postbuildcommands { "\"$(TargetPath)\"" }
+        configuration { "vs*" }
+            postbuildcommands { "\"$(TargetPath)\"" }
 end
 
 if _ACTION then
