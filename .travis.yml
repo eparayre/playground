@@ -19,4 +19,5 @@ before_install:
 
 script:
   - $CXX --version
+  - $CC --version
   - ./travis_script.sh
