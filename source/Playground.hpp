@@ -1,4 +1,4 @@
 #pragma once
 
-#include "CppFeatures.h"
+#include "CppFeatures.hpp"
 #include "catch.hpp"
