@@ -69,6 +69,6 @@ TEST_CASE( "ConstLiffy", "[auto][lambda]" )
     CHECK( shouldDraw[ 1 ] == false );
     CHECK( shouldDraw[ 2 ] == false );
     CHECK( shouldDraw[ 3 ] == false );
-    CHECK( shouldDraw[ 4 ] == true  );
+    CHECK( shouldDraw[ 4 ] == false );
     CHECK( shouldDraw[ 5 ] == true  );
 }
