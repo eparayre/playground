@@ -1,8 +1,8 @@
 language: c++
 
 compiler:
-    - clang
-    - gcc
+  - clang
+  - gcc
 
 addons:
   apt:
@@ -10,7 +10,7 @@ addons:
     - clang
 
 before_install:
-    - chmod +x travis_script.sh
+  - chmod +x travis_script.sh
 
 script:
-    - ./travis_script.sh
+  - ./travis_script.sh
