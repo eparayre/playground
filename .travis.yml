@@ -18,5 +18,5 @@ before_install:
   - chmod +x travis_script.sh
 
 script:
-  - "$CXX" --version
+  - $CXX --version
   - ./travis_script.sh
