@@ -11,11 +11,12 @@ addons:
     packages:
     - gcc-4.8
     - g++-4.8
-    - clang-3.6
+    - clang
 
 before_install:
-#  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
   - chmod +x travis_script.sh
 
 script:
+  - $CSS --version
   - ./travis_script.sh
