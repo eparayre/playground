@@ -55,12 +55,12 @@ before_install:
 
 before_script:
     - if [ -n "${INSTALL_CXX}" ]; then
-        CXX=${INSTALL_CXX}
-        $CXX --version
+        CXX=${INSTALL_CXX};
+        $CXX --version;
       fi
     - if [ -n "${INSTALL_CC}" ]; then
-        CC=${INSTALL_CC}
-        $CC --version
+        CC=${INSTALL_CC};
+        $CC --version;
       fi
 
 script:
