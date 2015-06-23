@@ -26,7 +26,7 @@ TEST_CASE( "CompileTime Expression", "[constexpr]" )
 {
     std::array< int, Pow( 0, 1 ) > array0_1;
     std::array< int, Pow( 3, 3 ) > array3_3;
-    std::array< int, Pow( 2, 6 ) > array2_4;
+    std::array< int, Pow( 2, 6 ) > array2_6;
 
     CHECK( array0_1.size() ==  0 );
     CHECK( array3_3.size() == 27 );
