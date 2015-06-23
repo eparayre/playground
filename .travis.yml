@@ -4,6 +4,11 @@ compiler:
     - clang
     - gcc
 
+addons:
+  apt:
+    packages:
+    - clang
+
 before_install:
     - chmod +x travis_script.sh
 
