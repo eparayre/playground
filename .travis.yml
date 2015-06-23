@@ -24,14 +24,14 @@ matrix:
           addons:
             apt:
                 sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5' ]
-                packages: [ 'clang++-3.5' ]
+                packages: [ 'clang-3.5' ]
         - os: linux
           compiler: clang
           env: INSTALL_CXX=clang++-3.6
           addons:
             apt:
                 sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.6' ]
-                packages: [ 'clang++-3.6' ]
+                packages: [ 'clang-3.6' ]
         - os: osx
           compiler: clang
 
@@ -39,8 +39,14 @@ before_install:
     - chmod +x travis_script.sh
 
 before_script:
-    - if [ -n "${INSTALL_CXX}" ]; then CXX=${INSTALL_CXX}; $CXX --version; fi
-    - if [ -n "${INSTALL_CC}" ]; then CC=${INSTALL_CC}; $CC --version; fi
+    - if [ -n "${INSTALL_CXX}" ]; then
+        CXX=${INSTALL_CXX};
+        $CXX --version;
+      fi
+    - if [ -n "${INSTALL_CC}" ]; then
+        CC=${INSTALL_CC};
+        $CC --version;
+      fi
 
 script:
     - ./travis_script.sh
