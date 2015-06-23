@@ -1,58 +1,72 @@
 
-function AddLocation(target)
-    configuration(target)
-        location(target)
+local Playground = {}
+
+Playground.RootDir = path.getabsolute( ".." );
+Playground.SrcDir  = path.join( Playground.RootDir, "source" )
+Playground.OutDir  = path.join( Playground.RootDir, "output/" .. _ACTION )
+Playground.BinDir  = path.join( Playground.OutDir, "bin" )
+Playground.ObjDir  = path.join( Playground.OutDir, "obj" )
+
+function Playground.GenerateSolution()
+    print( "Generating Playground..." )
+    print( "  { RootDir = " .. Playground.RootDir .. " }" )
+    print( "  { OutDir  = " .. Playground.OutDir  .. " }" )
+    print( "  { BinDir  = " .. Playground.BinDir  .. " }" )
+    print( "  { ObjDir  = " .. Playground.ObjDir  .. " }" )
+
+    Playground.sln = solution( "Playground" )
+        configurations( { "Debug", "Release" } )
+        location( _ACTION )
+
+        configuration( "Debug" )
+            targetdir( path.join( Playground.BinDir, "Debug" ) )
+            objdir( Playground.ObjDir )
+
+        configuration( "Release" )
+            targetdir( path.join( Playground.BinDir, "Release" ) )
+            objdir( Playground.ObjDir )
+
+    Playground.GenerateProject()
+
+    print()
 end
 
-function SetupDefaultConfigs()
-    configuration "Debug"
-        defines { "DEBUG" }
-        objdir "../tmp/obj"
-        targetdir "../tmp/bin"
-        flags { "Symbols" }
+function Playground.GenerateProject()
+    Playground.prj = project( "Playground" )
+        kind( "ConsoleApp" )
+        language( "C++" )
 
-    configuration "Release"
-        defines { "NDEBUG" }
-        objdir "../tmp/obj"
-        targetdir "../tmp/bin"
-        flags { "Optimize" }
+        includedirs { Playground.SrcDir }
 
-    configuration "*"
+        files {
+            path.join( Playground.SrcDir, "**.h" ),
+            path.join( Playground.SrcDir, "**.hpp" ),
+            path.join( Playground.SrcDir, "**.inl" ),
+
+            path.join( Playground.SrcDir, "**.c" ),
+            path.join( Playground.SrcDir, "**.cpp" ),
+            path.join( Playground.SrcDir, "**.cxx" )
+        }
+
+        configuration( "Debug" )
+            defines { "DEBUG" }
+            flags { "Symbols" }
+
+        configuration( "Release" )
+            defines { "NDEBUG" }
+            flags { "Optimize" }
+
+        Playground.SetupPostBuildExecute()
 end
 
-function SetupPostBuildExecute()
-    configuration {"gmake"}
-		postbuildcommands  { "$(TARGET)" }
-        
+function Playground.SetupPostBuildExecute()
+    configuration { "gmake" }
+		postbuildcommands { "$(TARGET)" }
+
     configuration { "vs*" }
         postbuildcommands { "\"$(TargetPath)\"" }
 end
 
-function GenerateSolution()
-    solution "Playground"
-        configurations { "Debug", "Release" }
-
-        AddLocation("gmake")
-        AddLocation("vs2012")
-        AddLocation("vs2013")
-        AddLocation("vs2015")
-
-        project "Playground"
-            kind "StaticLib"
-            SetupDefaultConfigs()
-            files {
-                "../source/**.h",
-                "../source/**.hpp",
-                "../source/**.cpp" }
-
-        project "Playground.Test"
-            kind "ConsoleApp"
-            SetupDefaultConfigs()
-            SetupPostBuildExecute();
-            files {
-                "../test/**.h",
-                "../test/**.hpp",
-                "../test/**.cpp" }
+if _ACTION then
+    Playground.GenerateSolution()
 end
-
-GenerateSolution()
