@@ -35,6 +35,9 @@ matrix:
         - os: osx
           compiler: clang
 
+    allow_failures:
+        - os: osx
+
 before_install:
     - chmod +x travis_script.sh
 
