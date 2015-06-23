@@ -58,7 +58,7 @@ function Playground.GenerateProject()
 
         configuration { "gmake" }
             postbuildcommands { "$(TARGET)" }
-            buildoptions { "-std=gnu++0x" }
+            buildoptions { "-std=c++11" }
 
         configuration { "vs*" }
             postbuildcommands { "\"$(TargetPath)\"" }
