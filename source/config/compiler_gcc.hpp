@@ -14,6 +14,9 @@
         #define GCC_CXX11
     #endif
 
+    #define COMPILER_NAME "gcc"
+    #define COMPILER_VERSION GCC_VERSION
+
     //-----------------------------------------------------------------------------
     // c++11
 

@@ -6,6 +6,14 @@
 #if defined( __clang__ )
 
     //-----------------------------------------------------------------------------
+    // setup
+
+    #define CLANG_VERSION ( __clang_major__ * 10000 + __clang_minor__ * 100 )
+
+    #define COMPILER_NAME "clang"
+    #define COMPILER_VERSION CLANG_VERSION
+
+    //-----------------------------------------------------------------------------
     // c++11
 
     #if __has_feature( cxx_alias_templates )

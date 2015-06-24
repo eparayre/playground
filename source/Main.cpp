@@ -76,6 +76,10 @@ namespace
     //-----------------------------------------------------------------------------
     void DumpCxxFeatures()
     {
+        std::cout << std::endl;
+
+        std::cout << "compiler(" << COMPILER_NAME << " " << COMPILER_VERSION << ")" << std::endl;
+
         DumpCxx11Features();
         DumpCxx14Features();
 
