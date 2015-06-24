@@ -81,7 +81,7 @@ namespace
     template< int size, class dummy >
     struct CompileTimeCRC32< size, size, dummy >
     {
-        static constexpr unsigned int Compute( const char * str, unsigned int prev_crc = 0xFFFFFFFF )
+        static constexpr unsigned int Compute( const char*, unsigned int prev_crc = 0xFFFFFFFF )
         {
             return prev_crc ^ 0xFFFFFFFF;
         }

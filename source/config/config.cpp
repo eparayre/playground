@@ -43,6 +43,8 @@ void CompilerInfo::DumpSupportedFeatures()
 //-----------------------------------------------------------------------------
 void CompilerInfo::FillCxx11Features( Features& features )
 {
+    (void)features;
+
 #ifdef CXX11_ALIAS_TEMPLATES
     features.push_back( "cxx11_alias_templates" );
 #endif
@@ -95,6 +97,8 @@ void CompilerInfo::FillCxx11Features( Features& features )
 //-----------------------------------------------------------------------------
 void CompilerInfo::FillCxx14Features( Features& features )
 {
+    (void)features;
+
 #ifdef CXX14_DECLTYPE_AUTO
     features.push_back( "cxx14_decltype_auto" );
 #endif

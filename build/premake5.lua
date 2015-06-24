@@ -1,8 +1,10 @@
 
 local Playground = {}
 
-Playground.RootDir = path.getabsolute( ".." );
-Playground.SrcDir  = path.join( Playground.RootDir, "source" )
+Playground.RootDir    = path.getabsolute( ".." );
+Playground.ExternsDir = path.join( Playground.RootDir, "externs" )
+Playground.SourceDir  = path.join( Playground.RootDir, "source" )
+
 Playground.OutDir  = path.join( Playground.RootDir, "output/" .. _ACTION )
 Playground.BinDir  = path.join( Playground.OutDir, "bin" )
 Playground.ObjDir  = path.join( Playground.OutDir, "obj" )
@@ -36,25 +38,26 @@ function Playground.GenerateProject()
         kind( "ConsoleApp" )
         language( "C++" )
 
-        includedirs { Playground.SrcDir }
+        includedirs { Playground.SourceDir }
+        includedirs { path.join( Playground.ExternsDir, "boost" ) }
 
         files {
-            path.join( Playground.SrcDir, "**.h" ),
-            path.join( Playground.SrcDir, "**.hpp" ),
-            path.join( Playground.SrcDir, "**.inl" ),
+            path.join( Playground.SourceDir, "**.h" ),
+            path.join( Playground.SourceDir, "**.hpp" ),
+            path.join( Playground.SourceDir, "**.inl" ),
 
-            path.join( Playground.SrcDir, "**.c" ),
-            path.join( Playground.SrcDir, "**.cpp" ),
-            path.join( Playground.SrcDir, "**.cxx" )
+            path.join( Playground.SourceDir, "**.c" ),
+            path.join( Playground.SourceDir, "**.cpp" ),
+            path.join( Playground.SourceDir, "**.cxx" )
         }
 
         configuration { "Debug" }
             defines { "DEBUG" }
-            flags { "Symbols" }
+            flags { "Symbols", "ExtraWarnings", "FatalWarnings" }
 
         configuration { "Release" }
             defines { "NDEBUG" }
-            flags { "Optimize" }
+            flags { "Optimize", "ExtraWarnings", "FatalWarnings" }
 
         configuration { "gmake" }
             postbuildcommands { "$(TARGET)" }

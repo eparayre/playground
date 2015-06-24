@@ -38,7 +38,7 @@ namespace
     }
 
     //-----------------------------------------------------------------------------
-    std::string Format( const std::string& format, size_t index )
+    std::string Format( const std::string& format, size_t )
     {
         return format;
     }
