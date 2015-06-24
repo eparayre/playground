@@ -4,6 +4,7 @@
 #include "catch.hpp"
 
 #include <cstdint>
+#include <iostream>
 
 #include <array>
 #include <string>
