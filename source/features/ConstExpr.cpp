@@ -1,12 +1,12 @@
 #include "Playground.hpp"
 
-#if defined( CPP11_CONSTEXPR ) && defined( CPP11_NOEXCEPT )
+#if defined( CXX11_CONSTEXPR )
 
 namespace
 {
-#if defined( CPP14_CONSTEXPR )
+#if defined( CXX14_RELAXED_CONSTEXPR )
     //-----------------------------------------------------------------------------
-    constexpr int Pow( int base, int exp ) noexcept
+    constexpr int Pow( int base, int exp )
     {
         auto result = 1;
         for( int i = 0; i < exp; ++i ) result *= base;
@@ -14,7 +14,7 @@ namespace
     }
 #else
     //-----------------------------------------------------------------------------
-    constexpr int Pow( int base, int exp ) noexcept
+    constexpr int Pow( int base, int exp )
     {
         return ( exp == 0 ? 1 : base * Pow( base, exp - 1 ) );
     }

@@ -2,6 +2,8 @@
 
 #include <type_traits>
 
+#if defined( CXX11_IMPLICIT_MOVES )
+
 namespace
 {
     //-----------------------------------------------------------------------------
@@ -37,7 +39,7 @@ namespace
     };
 }
 
-TEST_CASE( "Auto Generation Behaviors", "[special_member_functions]" )
+TEST_CASE( "Auto Generation Behaviors", "[c++11][implicit_moves]" )
 {
     SECTION( "nothing declared or deleted" )
     {
@@ -125,3 +127,5 @@ TEST_CASE( "Auto Generation Behaviors", "[special_member_functions]" )
         CHECK_FALSE( std::is_move_constructible< MoveAssignmentDeleted >::value );
     }
 }
+
+#endif

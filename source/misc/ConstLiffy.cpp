@@ -1,5 +1,7 @@
 #include "Playground.hpp"
 
+#if defined( CXX11_STRONG_ENUMS ) && defined( CXX11_LAMBDAS )
+
 namespace
 {
     //-----------------------------------------------------------------------------
@@ -72,3 +74,5 @@ TEST_CASE( "ConstLiffy", "[auto][lambda]" )
     CHECK( shouldDraw[ 4 ] == false );
     CHECK( shouldDraw[ 5 ] == true  );
 }
+
+#endif

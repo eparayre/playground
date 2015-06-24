@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CppFeatures.hpp"
+#include "config/config.hpp"
 #include "catch.hpp"
 
 #include <array>

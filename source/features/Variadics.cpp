@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 
-#if defined( CPP11_VARIADICS )
+#if defined( CXX11_VARIADIC_TEMPLATES )
 
 namespace
 {
