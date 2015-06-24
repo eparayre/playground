@@ -12,9 +12,12 @@
 
     #if defined( __GXX_EXPERIMENTAL_CXX0X__ )
         #define GCC_CXX11
+        #define COMPILER_NAME "gcc_c++11"
+    #else
+        #define COMPILER_NAME "gcc"
     #endif
 
-    #define COMPILER_NAME "gcc"
+    
     #define COMPILER_VERSION GCC_VERSION
 
     //-----------------------------------------------------------------------------
