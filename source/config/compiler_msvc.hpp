@@ -14,8 +14,10 @@
 
 #if defined( _MSC_VER )
 
-    #define COMPILER_NAME "msvc"
-    #define COMPILER_VERSION _MSC_VER
+    #define COMPILER_STR(a) #a
+    #define COMPILER_XSTR(a) COMPILER_STR(a)
+
+    #define COMPILER_IDENTIFICATION "msvc-" COMPILER_XSTR(_MSC_VER)
 
     //-----------------------------------------------------------------------------
     // c++11

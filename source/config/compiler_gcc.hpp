@@ -7,8 +7,10 @@
 
     #define GCC_VERSION ( __GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__ )
 
-    #define COMPILER_NAME "gcc"
-    #define COMPILER_VERSION GCC_VERSION
+    #define COMPILER_STR(a) #a
+    #define COMPILER_XSTR(a) COMPILER_STR(a)
+
+    #define COMPILER_IDENTIFICATION "gcc-" COMPILER_XSTR( __GNUC__ ) "." COMPILER_XSTR( __GNUC_MINOR__ ) "." COMPILER_XSTR( __GNUC_PATCHLEVEL__ )
 
     //-----------------------------------------------------------------------------
     // c++11

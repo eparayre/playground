@@ -11,8 +11,6 @@
 class CompilerInfo
 {
 public:
-    static std::string CompilerIdentification();
-
     static void DumpSupportedFeatures();
 
 private:

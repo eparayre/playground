@@ -23,14 +23,6 @@ namespace
 }
 
 //-----------------------------------------------------------------------------
-std::string CompilerInfo::CompilerIdentification()
-{
-    std::stringstream stream;
-    stream << COMPILER_NAME << "-" << COMPILER_VERSION;
-    return std::move( stream.str() );
-}
-
-//-----------------------------------------------------------------------------
 void CompilerInfo::DumpSupportedFeatures()
 {
     Features features;
@@ -40,7 +32,7 @@ void CompilerInfo::DumpSupportedFeatures()
 
     std::sort( features.begin(), features.end() );
 
-    ScopedParagraph paragraph( CompilerIdentification() );
+    ScopedParagraph paragraph( COMPILER_IDENTIFICATION );
 
     for (const auto& feature : features)
     {
