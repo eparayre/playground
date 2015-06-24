@@ -10,8 +10,6 @@
 
     #define CLANG_VERSION ( __clang_major__ * 10000 + __clang_minor__ * 100 )
 
-    #define COMPILER_VERSION CLANG_VERSION
-
     //-----------------------------------------------------------------------------
     // c++11
 
