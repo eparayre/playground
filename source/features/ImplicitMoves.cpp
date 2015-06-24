@@ -1,8 +1,8 @@
 #include "Playground.hpp"
 
-#include <type_traits>
-
 #if defined( CXX11_IMPLICIT_MOVES )
+
+#include <type_traits>
 
 namespace
 {

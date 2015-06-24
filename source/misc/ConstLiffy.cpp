@@ -2,6 +2,8 @@
 
 #if defined( CXX11_STRONG_ENUMS ) && defined( CXX11_LAMBDAS )
 
+#include <vector>
+
 namespace
 {
     //-----------------------------------------------------------------------------

@@ -2,6 +2,8 @@
 
 #if defined( CXX11_CONSTEXPR )
 
+#include <array>
+
 namespace
 {
 #if defined( CXX14_RELAXED_CONSTEXPR )

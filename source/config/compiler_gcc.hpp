@@ -5,10 +5,10 @@
 
 #if defined( __GNUC__ )
 
-    //-----------------------------------------------------------------------------
-    // setup
-
     #define GCC_VERSION ( __GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__ )
+
+    #define COMPILER_NAME "gcc"
+    #define COMPILER_VERSION GCC_VERSION
 
     //-----------------------------------------------------------------------------
     // c++11

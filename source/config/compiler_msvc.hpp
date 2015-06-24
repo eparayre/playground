@@ -14,6 +14,9 @@
 
 #if defined( _MSC_VER )
 
+    #define COMPILER_NAME "msvc"
+    #define COMPILER_VERSION _MSC_VER
+
     //-----------------------------------------------------------------------------
     // c++11
 

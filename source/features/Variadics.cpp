@@ -1,10 +1,10 @@
 #include "Playground.hpp"
 
+#if defined( CXX11_VARIADIC_TEMPLATES )
+
 #include <iostream>
 #include <string>
 #include <sstream>
-
-#if defined( CXX11_VARIADIC_TEMPLATES )
 
 namespace
 {
