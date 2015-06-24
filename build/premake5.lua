@@ -1,13 +1,12 @@
 
 local Playground = {}
 
-Playground.RootDir    = path.getabsolute( ".." );
-Playground.ExternsDir = path.join( Playground.RootDir, "externs" )
-Playground.SourceDir  = path.join( Playground.RootDir, "source" )
+Playground.RootDir   = path.getabsolute( ".." );
+Playground.SourceDir = path.join( Playground.RootDir, "source" )
 
-Playground.OutDir  = path.join( Playground.RootDir, "output/" .. _ACTION )
-Playground.BinDir  = path.join( Playground.OutDir, "bin" )
-Playground.ObjDir  = path.join( Playground.OutDir, "obj" )
+Playground.OutDir = path.join( Playground.RootDir, "output/" .. _ACTION )
+Playground.BinDir = path.join( Playground.OutDir, "bin" )
+Playground.ObjDir = path.join( Playground.OutDir, "obj" )
 
 function Playground.GenerateSolution()
     print( "Generating Playground..." )
@@ -39,7 +38,6 @@ function Playground.GenerateProject()
         language( "C++" )
 
         includedirs { Playground.SourceDir }
-        includedirs { path.join( Playground.ExternsDir, "boost" ) }
 
         files {
             path.join( Playground.SourceDir, "**.h" ),
