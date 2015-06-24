@@ -8,9 +8,6 @@
     #define COMPILER_STR( a ) #a
     #define COMPILER_XSTR( a ) COMPILER_STR( a )
 
-    #define COMPILER_STR(a) #a
-    #define COMPILER_XSTR(a) COMPILER_STR(a)
-
     #define COMPILER_IDENTIFICATION "clang-" COMPILER_XSTR( __clang_major__ ) "." COMPILER_XSTR( __clang_minor__ ) "." COMPILER_XSTR( __clang_patchlevel__ )
 
     //-----------------------------------------------------------------------------
