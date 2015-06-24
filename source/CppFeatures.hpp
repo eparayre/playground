@@ -13,6 +13,7 @@
 
 #   if ( _MSC_VER >= 1900 )
 #       define CPP11_NOEXCEPT
+#       define CPP11_CONSTEXPR
 #   endif
 
 #   if ( _MSC_VER > 1400 )
