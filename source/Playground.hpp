@@ -3,6 +3,8 @@
 #include "config/config.hpp"
 #include "catch.hpp"
 
+#include <cstdint>
+
 #include <array>
-#include <vector>
 #include <string>
+#include <vector>
