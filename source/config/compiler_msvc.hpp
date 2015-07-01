@@ -51,6 +51,7 @@
 
     #if ( _MSC_VER >= 1900 ) // vs2015
         #define CXX14_DECLTYPE_AUTO
+        #define CXX14_INIT_CAPTURES
     #endif
 
 #endif

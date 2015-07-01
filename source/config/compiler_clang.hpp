@@ -68,6 +68,10 @@
         #define CXX14_DECLTYPE_AUTO
     #endif
 
+    #if __has_feature( __cxx_init_captures__ )
+        #define CXX14_INIT_CAPTURES
+    #endif
+
     #if __has_feature( cxx_relaxed_constexpr )
         #define CXX14_RELAXED_CONSTEXPR
     #endif

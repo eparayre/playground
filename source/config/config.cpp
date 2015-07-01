@@ -103,6 +103,10 @@ void CompilerInfo::FillCxx14Features( Features& features )
     features.push_back( "cxx14_decltype_auto" );
 #endif
 
+#ifdef CXX14_INIT_CAPTURES
+    features.push_back( "cxx14_init_captures" );
+#endif
+
 #ifdef CXX14_RELAXED_CONSTEXPR
     features.push_back( "cxx14_relaxed_constexpr" );
 #endif

@@ -55,6 +55,10 @@
         #define CXX14_DECLTYPE_AUTO
     #endif
 
+    #if ( GCC_VERSION >= 40900 ) // gcc 4.9
+        #define CXX14_INIT_CAPTURES
+    #endif
+
     #if defined( __cpp_constexpr ) && ( __cpp_constexpr >= 201304 )
         #define CXX14_RELAXED_CONSTEXPR
     #endif
