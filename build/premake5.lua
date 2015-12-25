@@ -61,6 +61,9 @@ function Playground.GenerateProject()
             postbuildcommands { "$(TARGET)" }
             buildoptions { "-std=c++11", "-std=c++1y" }
 
+        configuration { "xcode4" }
+            buildoptions { "-std=c++11", "-std=c++1y" }
+
         configuration { "vs*" }
             postbuildcommands { "\"$(TargetPath)\"" }
 end
