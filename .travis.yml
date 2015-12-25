@@ -48,7 +48,7 @@ matrix:
         - os: osx
 
 before_install:
-    - chmod +x travis.sh
+    - chmod +x script_travis.sh
 
 before_script:
     - if [ -n "${INSTALL_CXX}" ]; then
@@ -61,4 +61,4 @@ before_script:
       fi
 
 script:
-    - ./travis.sh
+    - ./script_travis.sh
