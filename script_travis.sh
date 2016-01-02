@@ -1,7 +1,8 @@
-cd build
+pushd $(dirname $0) > /dev/null
 
-./premake_gmake.sh
+build/premake_gmake.sh
 
-cd gmake
-
+cd build/gmake
 make
+
+popd > /dev/null

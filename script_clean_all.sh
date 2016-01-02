@@ -1,4 +1,7 @@
+pushd $(dirname $0) > /dev/null
+
+build/premake_clean.sh
+
 ./script_clean_output.sh
 
-cd build
-./premake_clean.sh
+popd > /dev/null
