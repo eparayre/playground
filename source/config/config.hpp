@@ -18,4 +18,5 @@ private:
 
     static void FillCxx11Features( Features& features );
     static void FillCxx14Features( Features& features );
+    static void FillCxx1zFeatures( Features& features );
 };

@@ -29,6 +29,7 @@ void CompilerInfo::DumpSupportedFeatures()
 
     FillCxx11Features( features );
     FillCxx14Features( features );
+    FillCxx1zFeatures( features );
 
     std::sort( features.begin(), features.end() );
 
@@ -109,5 +110,15 @@ void CompilerInfo::FillCxx14Features( Features& features )
 
 #ifdef CXX14_RELAXED_CONSTEXPR
     features.push_back( "cxx14_relaxed_constexpr" );
+#endif
+}
+
+//-----------------------------------------------------------------------------
+void CompilerInfo::FillCxx1zFeatures( Features& features )
+{
+    (void)features;
+
+#ifdef CXX1Z_HAS_INCLUDE
+    features.push_back( "cxx1z_has_include" );
 #endif
 }
