@@ -5,6 +5,10 @@
 #include "compiler_gcc.hpp"
 #include "compiler_msvc.hpp"
 
+#if !defined( COMPILER_IDENTIFICATION )
+    #define COMPILER_IDENTIFICATION "unknown"
+#endif
+
 #include <string>
 #include <vector>
 
