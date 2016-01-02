@@ -1,6 +1,6 @@
 #include "Playground.hpp"
 
-#if defined( CXX1Z_HAS_INCLUDE )
+#if defined( CXX_HAS_INCLUDE )
 
 #if __has_include("invalide_file.hpp")
     #define HAS_INCLUDE_VALUE -1

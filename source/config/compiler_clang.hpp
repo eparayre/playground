@@ -76,11 +76,4 @@
         #define CXX14_RELAXED_CONSTEXPR
     #endif
 
-    //-----------------------------------------------------------------------------
-    // c++1z
-
-    #if defined( __has_include )
-        #define CXX1Z_HAS_INCLUDE
-    #endif
-
 #endif

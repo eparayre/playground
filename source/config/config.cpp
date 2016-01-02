@@ -27,6 +27,7 @@ void CompilerInfo::DumpSupportedFeatures()
 {
     Features features;
 
+    FillCxxFeatures( features );
     FillCxx11Features( features );
     FillCxx14Features( features );
     FillCxx1zFeatures( features );
@@ -39,6 +40,24 @@ void CompilerInfo::DumpSupportedFeatures()
     {
         std::cout << "> " << feature << std::endl;
     }
+}
+
+//-----------------------------------------------------------------------------
+void CompilerInfo::FillCxxFeatures( Features& features )
+{
+    (void)features;
+
+#ifdef CXX_HAS_BUILTIN
+    features.push_back( "cxx_has_builtin" );
+#endif
+
+#ifdef CXX_HAS_INCLUDE
+    features.push_back( "cxx_has_include" );
+#endif
+
+#ifdef CXX_HAS_INCLUDE_NEXT
+    features.push_back( "cxx_has_include_next" );
+#endif
 }
 
 //-----------------------------------------------------------------------------
@@ -117,8 +136,4 @@ void CompilerInfo::FillCxx14Features( Features& features )
 void CompilerInfo::FillCxx1zFeatures( Features& features )
 {
     (void)features;
-
-#ifdef CXX1Z_HAS_INCLUDE
-    features.push_back( "cxx1z_has_include" );
-#endif
 }
