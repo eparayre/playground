@@ -79,6 +79,13 @@ TEST_CASE( "StringFormat", "[variadics]" )
 
         CHECK( result == "key B = value A" );
     }
+
+    SECTION( "numerical values" )
+    {
+        auto result = StringFormat( "key {0} = value {1}", 69, 3.1416f );
+
+        CHECK( result == "key 69 = value 3.1416" );
+    }
 }
 
 #endif

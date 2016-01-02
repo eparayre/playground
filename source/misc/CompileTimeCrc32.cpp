@@ -1,6 +1,6 @@
 #include "Playground.hpp"
 
-#if defined (CXX11_CONSTEXPR)
+#if defined( CXX11_CONSTEXPR )
 
 namespace
 {
