@@ -17,7 +17,7 @@ public:
 private:
     using Features = std::vector< std::string >;
 
-    static void FillCxxFeatures( Features& features );
+    static void FillMacros( Features& features );
     static void FillCxx11Features( Features& features );
     static void FillCxx14Features( Features& features );
     static void FillCxx1zFeatures( Features& features );

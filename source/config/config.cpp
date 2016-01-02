@@ -27,7 +27,7 @@ void CompilerInfo::DumpSupportedFeatures()
 {
     Features features;
 
-    FillCxxFeatures( features );
+    FillMacros( features );
     FillCxx11Features( features );
     FillCxx14Features( features );
     FillCxx1zFeatures( features );
@@ -43,20 +43,44 @@ void CompilerInfo::DumpSupportedFeatures()
 }
 
 //-----------------------------------------------------------------------------
-void CompilerInfo::FillCxxFeatures( Features& features )
+void CompilerInfo::FillMacros( Features& features )
 {
     (void)features;
 
+#ifdef CXX_HAS_ATTRIBUTE
+    features.push_back( "cxx_macro_has_attribute" );
+#endif
+
+#ifdef CXX_HAS_ATTRIBUTE_CPP
+    features.push_back( "cxx_macro_has_attribute_cpp" );
+#endif
+
+#ifdef CXX_HAS_ATTRIBUTE_DECLSPEC
+    features.push_back( "cxx_macro_has_attribute_declspec" );
+#endif
+
 #ifdef CXX_HAS_BUILTIN
-    features.push_back( "cxx_has_builtin" );
+    features.push_back( "cxx_macro_has_builtin" );
+#endif
+
+#ifdef CXX_HAS_EXTENSION
+    features.push_back( "cxx_macro_has_extension" );
+#endif
+
+#ifdef CXX_HAS_FEATURE
+    features.push_back( "cxx_macro_has_feature" );
 #endif
 
 #ifdef CXX_HAS_INCLUDE
-    features.push_back( "cxx_has_include" );
+    features.push_back( "cxx_macro_has_include" );
 #endif
 
 #ifdef CXX_HAS_INCLUDE_NEXT
-    features.push_back( "cxx_has_include_next" );
+    features.push_back( "cxx_macro_has_include_next" );
+#endif
+
+#ifdef CXX_HAS_WARNING
+    features.push_back( "cxx_macro_has_warning" );
 #endif
 }
 
