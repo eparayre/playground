@@ -67,6 +67,7 @@ before_script:
         CC=${INSTALL_CC};
         $CC --version;
       fi
+    - build/buildtools-premake/bin/premake.sh --version
 
 script:
     - ./script_travis.sh
