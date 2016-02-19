@@ -56,6 +56,7 @@ matrix:
         - os: osx
 
 before_install:
+    - chmod +x build/buildtools-premake/bin/linux/premake5
     - chmod +x script_travis.sh
 
 before_script:
@@ -67,6 +68,7 @@ before_script:
         CC=${INSTALL_CC};
         $CC --version;
       fi
+    - build/buildtools-premake/bin/premake.sh --version
 
 script:
     - ./script_travis.sh
