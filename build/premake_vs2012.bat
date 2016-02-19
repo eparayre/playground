@@ -1,3 +1,3 @@
 @echo off
 
-call "premake/windows/premake5.exe" vs2012
+call "buildtools-premake/bin/windows/premake5.exe" vs2012

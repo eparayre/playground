@@ -1,5 +1,7 @@
+#!/bin/bash
+
 pushd $(dirname $0) > /dev/null
 
-premake/mac/premake5 xcode4
+buildtools-premake/bin/premake.sh xcode4
 
 popd > /dev/null

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 pushd $(dirname $0) > /dev/null
 
 build/premake_gmake.sh
