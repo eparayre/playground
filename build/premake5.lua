@@ -65,6 +65,7 @@ function Playground.GenerateProject()
             buildoptions { "-std=c++11", "-std=c++1y" }
 
         configuration { "vs*" }
+            buildoptions { "/wd4706" }
             postbuildcommands { "\"$(TargetPath)\"" }
 end
 
