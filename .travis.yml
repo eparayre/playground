@@ -49,11 +49,8 @@ matrix:
                 sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.7' ]
                 packages: [ 'clang-3.7' ]
 
-        #- os: osx
-        #  compiler: clang
-
-    allow_failures:
         - os: osx
+          compiler: clang
 
 before_install:
     - chmod +x build/buildtools-premake/bin/linux/premake5
