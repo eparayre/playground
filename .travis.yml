@@ -53,7 +53,6 @@ matrix:
           compiler: clang
 
 before_install:
-    - chmod +x build/buildtools-premake/bin/linux/premake5
     - chmod +x script_travis.sh
 
 before_script:
