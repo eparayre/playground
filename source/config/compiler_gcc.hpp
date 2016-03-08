@@ -44,16 +44,13 @@
 
         #if ( GCC_VERSION >= 40700 ) // gcc 4.7
             #define CXX11_ALIAS_TEMPLATES
+            #define CXX11_DELEGATING_CONSTRUCTORS
         #endif
 
-    #endif
+        #if ( GCC_VERSION >= 40800 ) // gcc 4.8
+            #define CXX11_INHERITING_CONSTRUCTORS
+        #endif
 
-    #if defined( __cpp_delegating_constructors ) && ( __cpp_delegating_constructors >= 200604 )
-        #define CXX11_DELEGATING_CONSTRUCTORS
-    #endif
-
-    #if defined( __cpp_inheriting_constructors ) && ( __cpp_inheriting_constructors >= 200802 )
-        #define CXX11_INHERITING_CONSTRUCTORS
     #endif
 
     //-----------------------------------------------------------------------------
