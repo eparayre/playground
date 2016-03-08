@@ -29,6 +29,10 @@
         #define CXX11_DEFAULTED_FUNCTIONS
     #endif
 
+    #if __has_feature( cxx_delegating_constructors )
+        #define CXX11_DELEGATING_CONSTRUCTORS
+    #endif
+
     #if __has_feature( cxx_deleted_functions )
         #define CXX11_DELETED_FUNCTIONS
     #endif
@@ -39,6 +43,10 @@
 
     #if __has_feature( cxx_implicit_moves )
         #define CXX11_IMPLICIT_MOVES
+    #endif
+
+    #if __has_feature( cxx_inheriting_constructors )
+        #define CXX11_INHERITING_CONSTRUCTORS
     #endif
 
     #if __has_feature( cxx_lambdas )

@@ -105,6 +105,10 @@ void CompilerInfo::FillCxx11Features( Features& features )
     features.push_back( "cxx11_defaulted_functions" );
 #endif
 
+#ifdef CXX11_DELEGATING_CONSTRUCTORS
+    features.push_back( "cxx11_delegating_constructors" );
+#endif
+
 #ifdef CXX11_DELETED_FUNCTIONS
     features.push_back( "cxx11_deleted_functions" );
 #endif
@@ -115,6 +119,10 @@ void CompilerInfo::FillCxx11Features( Features& features )
 
 #ifdef CXX11_IMPLICIT_MOVES
     features.push_back( "cxx11_implicit_moves" );
+#endif
+
+#ifdef CXX11_INHERITING_CONSTRUCTORS
+    features.push_back( "cxx11_inheriting_constructors" );
 #endif
 
 #ifdef CXX11_LAMBDAS
