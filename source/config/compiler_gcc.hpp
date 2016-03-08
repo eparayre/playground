@@ -12,7 +12,7 @@
 
     #define COMPILER_IDENTIFICATION "gcc-" COMPILER_XSTR( __GNUC__ ) "." COMPILER_XSTR( __GNUC_MINOR__ ) "." COMPILER_XSTR( __GNUC_PATCHLEVEL__ )
 
-    #if defined()
+    #if defined( __has_feature )
 
         #include "config/compiler_has_feature.hpp"
 
