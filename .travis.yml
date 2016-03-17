@@ -38,7 +38,7 @@ matrix:
           env: INSTALL_CXX=clang++-3.6
           addons:
             apt:
-                sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.6' ]
+                sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise' ]
                 packages: [ 'clang-3.6' ]
 
         - os: linux
@@ -46,8 +46,16 @@ matrix:
           env: INSTALL_CXX=clang++-3.7
           addons:
             apt:
-                sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.7' ]
+                sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise' ]
                 packages: [ 'clang-3.7' ]
+
+        - os: linux
+          compiler: clang
+          env: INSTALL_CXX=clang++-3.8
+          addons:
+            apt:
+                sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise' ]
+                packages: [ 'clang-3.8' ]
 
         - os: osx
           compiler: clang
