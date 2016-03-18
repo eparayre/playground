@@ -1,0 +1,20 @@
+os: Visual Studio 2015
+
+environment:
+  matrix:
+    - VS_VERSION: vs2012
+    - VS_VERSION: vs2013
+    - VS_VERSION: vs2015
+
+install:
+    #- appveyor DownloadFile http://llvm.org/releases/3.8.0/LLVM-3.8.0-win64.exe
+    #- 7z x LLVM-3.8.0-win64.exe
+
+    - git submodule update --init --recursive
+
+    - cd build
+    - appveyor DownloadFile https://github.com/premake/premake-core/releases/download/v5.0.0-alpha8/premake-5.0.0-alpha8-windows.zip
+    - 7z x premake-5.0.0-alpha8-windows.zip
+    - premake5.exe --version
+    - premake5.exe %VS_VERSION%
+    - cd ..
