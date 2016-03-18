@@ -1,13 +1,6 @@
 #include "Playground.hpp"
 
-#if defined( __clang__ )
-    #if ( __clang_major__ < 3 ) || ( ( __clang_major__ == 3 ) && ( __clang_minor__ <= 5 ) )
-        // exclude those tests, there's issues with clang v3.5
-        #define EXCLUDE_MISC_JSON
-    #endif
-#endif
-
-#ifndef EXCLUDE_MISC_JSON
+#if defined( CXX11_NOEXCEPT )
 
 #include "json.hpp"
 #include <iostream>
