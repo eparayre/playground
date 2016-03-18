@@ -1,14 +1,14 @@
 
 local Playground = {}
 
-Playground.RootDir   = path.getabsolute( ".." );
-Playground.SourceDir = path.join( Playground.RootDir, "source" )
-
-Playground.OutDir = path.join( Playground.RootDir, "output/" .. _ACTION )
-Playground.BinDir = path.join( Playground.OutDir, "bin" )
-Playground.ObjDir = path.join( Playground.OutDir, "obj" )
-
 function Playground.GenerateSolution()
+    Playground.RootDir   = path.getabsolute( ".." );
+    Playground.SourceDir = path.join( Playground.RootDir, "source" )
+
+    Playground.OutDir = path.join( Playground.RootDir, "output/" .. _ACTION )
+    Playground.BinDir = path.join( Playground.OutDir, "bin" )
+    Playground.ObjDir = path.join( Playground.OutDir, "obj" )
+
     print( "Generating Playground..." )
     print( "  { RootDir = " .. Playground.RootDir .. " }" )
     print( "  { OutDir  = " .. Playground.OutDir  .. " }" )
