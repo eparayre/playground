@@ -68,6 +68,9 @@ matrix:
         - os: osx
           compiler: clang
 
+    allow_failures:
+        - env: INSTALL_CXX=clang++-3.8
+
 before_install:
     - chmod +x script_travis.sh
 
