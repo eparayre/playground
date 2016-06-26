@@ -1,7 +1,7 @@
 #include "Playground.hpp"
 
 #if defined( __GNUC__ ) && !defined( __clang__ )
-    #if ( GCC_VERSION <= 40900 )
+    #if ( __GNUC__ < 5 )
         #define EXCLUDE_MISC_FAKEIT
     #endif
 #endif
