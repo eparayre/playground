@@ -1,5 +1,13 @@
 #include "Playground.hpp"
 
+#if defined( __GNUC__ ) && !defined( __clang__ )
+    #if ( GCC_VERSION >= 50000 )
+        #define EXCLUDE_MISC_FAKEIT
+    #endif
+#endif
+
+#if !defined( EXCLUDE_MISC_FAKEIT )
+
 #include "externs/fakeit.hpp"
 
 //-----------------------------------------------------------------------------
@@ -126,3 +134,5 @@ TEST_CASE("Test FakeIt", "[fakeit]")
         //Verify(Method(mockFileSystem, Read).Using("file_B"));
     }
 }
+
+#endif
