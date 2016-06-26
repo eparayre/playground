@@ -1,5 +1,11 @@
 #include "Playground.hpp"
 
+#if defined( __GNUC__ ) && !defined( __clang__ )
+    #define EXCLUDE_MISC_HIPPOMOCKS
+#endif
+
+#if !defined( EXCLUDE_MISC_HIPPOMOCKS )
+
 #include "externs/hippomocks.h"
 
 //-----------------------------------------------------------------------------
@@ -105,3 +111,5 @@ TEST_CASE("Test HippoMocks", "[hippomocks]")
         CHECK(&fileB == &fakeFile);
     }
 }
+
+#endif
