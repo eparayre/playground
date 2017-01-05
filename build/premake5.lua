@@ -59,10 +59,10 @@ function Playground.GenerateProject()
 
         configuration { "gmake" }
             postbuildcommands { "$(TARGET)" }
-            buildoptions { "-std=c++11", "-std=c++1y" }
+            buildoptions { "-std=c++11", "-std=c++1z" }
 
         configuration { "xcode4" }
-            buildoptions { "-std=c++11", "-std=c++1y" }
+            buildoptions { "-std=c++11", "-std=c++1z" }
 
         configuration { "vs*" }
             buildoptions { "/wd4706" }
