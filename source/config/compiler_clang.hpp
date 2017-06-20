@@ -61,6 +61,10 @@
         #define CXX11_NULLPTR
     #endif
 
+    #if __has_feature( cxx_override_control )
+        #define CXX11_OVERRIDE_CONTROL
+    #endif
+
     #if __has_feature( cxx_strong_enums )
         #define CXX11_STRONG_ENUMS
     #endif

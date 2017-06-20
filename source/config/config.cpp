@@ -30,7 +30,7 @@ void CompilerInfo::DumpSupportedFeatures()
     FillMacros( features );
     FillCxx11Features( features );
     FillCxx14Features( features );
-    FillCxx1zFeatures( features );
+    FillCxx17Features( features );
 
     std::sort( features.begin(), features.end() );
 
@@ -48,39 +48,39 @@ void CompilerInfo::FillMacros( Features& features )
     (void)features;
 
 #ifdef CXX_HAS_ATTRIBUTE
-    features.push_back( "cxx_macro_has_attribute" );
+    features.emplace_back( "cxx_macro_has_attribute" );
 #endif
 
 #ifdef CXX_HAS_ATTRIBUTE_CPP
-    features.push_back( "cxx_macro_has_attribute_cpp" );
+    features.emplace_back( "cxx_macro_has_attribute_cpp" );
 #endif
 
 #ifdef CXX_HAS_ATTRIBUTE_DECLSPEC
-    features.push_back( "cxx_macro_has_attribute_declspec" );
+    features.emplace_back( "cxx_macro_has_attribute_declspec" );
 #endif
 
 #ifdef CXX_HAS_BUILTIN
-    features.push_back( "cxx_macro_has_builtin" );
+    features.emplace_back( "cxx_macro_has_builtin" );
 #endif
 
 #ifdef CXX_HAS_EXTENSION
-    features.push_back( "cxx_macro_has_extension" );
+    features.emplace_back( "cxx_macro_has_extension" );
 #endif
 
 #ifdef CXX_HAS_FEATURE
-    features.push_back( "cxx_macro_has_feature" );
+    features.emplace_back( "cxx_macro_has_feature" );
 #endif
 
 #ifdef CXX_HAS_INCLUDE
-    features.push_back( "cxx_macro_has_include" );
+    features.emplace_back( "cxx_macro_has_include" );
 #endif
 
 #ifdef CXX_HAS_INCLUDE_NEXT
-    features.push_back( "cxx_macro_has_include_next" );
+    features.emplace_back( "cxx_macro_has_include_next" );
 #endif
 
 #ifdef CXX_HAS_WARNING
-    features.push_back( "cxx_macro_has_warning" );
+    features.emplace_back( "cxx_macro_has_warning" );
 #endif
 }
 
@@ -90,59 +90,63 @@ void CompilerInfo::FillCxx11Features( Features& features )
     (void)features;
 
 #ifdef CXX11_ALIAS_TEMPLATES
-    features.push_back( "cxx11_alias_templates" );
+    features.emplace_back( "cxx11_alias_templates" );
 #endif
 
 #ifdef CXX11_CONSTEXPR
-    features.push_back( "cxx11_constexpr" );
+    features.emplace_back( "cxx11_constexpr" );
 #endif
 
 #ifdef CXX11_DECLTYPE
-    features.push_back( "cxx11_decltype" );
+    features.emplace_back( "cxx11_decltype" );
 #endif
 
 #ifdef CXX11_DEFAULTED_FUNCTIONS
-    features.push_back( "cxx11_defaulted_functions" );
+    features.emplace_back( "cxx11_defaulted_functions" );
 #endif
 
 #ifdef CXX11_DELEGATING_CONSTRUCTORS
-    features.push_back( "cxx11_delegating_constructors" );
+    features.emplace_back( "cxx11_delegating_constructors" );
 #endif
 
 #ifdef CXX11_DELETED_FUNCTIONS
-    features.push_back( "cxx11_deleted_functions" );
+    features.emplace_back( "cxx11_deleted_functions" );
 #endif
 
 #ifdef CXX11_GENERALIZED_INITIALIZERS
-    features.push_back( "cxx11_generalized_initializers" );
+    features.emplace_back( "cxx11_generalized_initializers" );
 #endif
 
 #ifdef CXX11_IMPLICIT_MOVES
-    features.push_back( "cxx11_implicit_moves" );
+    features.emplace_back( "cxx11_implicit_moves" );
 #endif
 
 #ifdef CXX11_INHERITING_CONSTRUCTORS
-    features.push_back( "cxx11_inheriting_constructors" );
+    features.emplace_back( "cxx11_inheriting_constructors" );
 #endif
 
 #ifdef CXX11_LAMBDAS
-    features.push_back( "cxx11_lambdas" );
+    features.emplace_back( "cxx11_lambdas" );
 #endif
 
 #ifdef CXX11_NOEXCEPT
-    features.push_back( "cxx11_noexcept" );
+    features.emplace_back( "cxx11_noexcept" );
 #endif
 
 #ifdef CXX11_NULLPTR
-    features.push_back( "cxx11_nullptr" );
+    features.emplace_back( "cxx11_nullptr" );
+#endif
+
+#ifdef CXX11_OVERRIDE_CONTROL
+    features.emplace_back( "cxx11_override_control" );
 #endif
 
 #ifdef CXX11_STRONG_ENUMS
-    features.push_back( "cxx11_strong_enums" );
+    features.emplace_back( "cxx11_strong_enums" );
 #endif
 
 #ifdef CXX11_VARIADIC_TEMPLATES
-    features.push_back( "cxx11_variadic_templates" );
+    features.emplace_back( "cxx11_variadic_templates" );
 #endif
 }
 
@@ -152,20 +156,20 @@ void CompilerInfo::FillCxx14Features( Features& features )
     (void)features;
 
 #ifdef CXX14_DECLTYPE_AUTO
-    features.push_back( "cxx14_decltype_auto" );
+    features.emplace_back( "cxx14_decltype_auto" );
 #endif
 
 #ifdef CXX14_INIT_CAPTURES
-    features.push_back( "cxx14_init_captures" );
+    features.emplace_back( "cxx14_init_captures" );
 #endif
 
 #ifdef CXX14_RELAXED_CONSTEXPR
-    features.push_back( "cxx14_relaxed_constexpr" );
+    features.emplace_back( "cxx14_relaxed_constexpr" );
 #endif
 }
 
 //-----------------------------------------------------------------------------
-void CompilerInfo::FillCxx1zFeatures( Features& features )
+void CompilerInfo::FillCxx17Features( Features& features )
 {
     (void)features;
 }

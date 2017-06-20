@@ -24,5 +24,5 @@ private:
     static void FillMacros( Features& features );
     static void FillCxx11Features( Features& features );
     static void FillCxx14Features( Features& features );
-    static void FillCxx1zFeatures( Features& features );
+    static void FillCxx17Features( Features& features );
 };
