@@ -1,5 +1,7 @@
 #include "Playground.hpp"
 
+#if defined( CXX17_NESTED_NAMESPACES )
+
 namespace A::B::C
 {
     //-----------------------------------------------------------------------------

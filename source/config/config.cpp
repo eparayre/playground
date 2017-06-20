@@ -172,4 +172,8 @@ void CompilerInfo::FillCxx14Features( Features& features )
 void CompilerInfo::FillCxx17Features( Features& features )
 {
     (void)features;
+
+#ifdef CXX17_NESTED_NAMESPACES
+    features.emplace_back( "cxx17_nested_namespaces" );
+#endif
 }
