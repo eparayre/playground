@@ -2,6 +2,8 @@
 
 #if defined( __GNUC__ ) && !defined( __clang__ )
     #define EXCLUDE_MISC_FAKEIT
+#elif defined( _MSC_VER )
+    #define EXCLUDE_MISC_FAKEIT
 #endif
 
 #if !defined( EXCLUDE_MISC_FAKEIT )
