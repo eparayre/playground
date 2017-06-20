@@ -18,3 +18,5 @@ TEST_CASE( "Nested Namespaces", "[c++17][nested_namespaces]" )
     CHECK( A::B::C::Add(2, 3) == 5 );
     CHECK( A::B::C::Add(3, 4) == 7 );
 }
+
+#endif
