@@ -65,11 +65,20 @@ matrix:
                 sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8' ]
                 packages: [ 'clang-3.8' ]
 
+        - os: linux
+          compiler: clang
+          env: INSTALL_CXX=clang++-3.9
+          addons:
+            apt:
+                sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.9' ]
+                packages: [ 'clang-3.9' ]
+
         - os: osx
           compiler: clang
 
     allow_failures:
         - env: INSTALL_CXX=clang++-3.8
+        - env: INSTALL_CXX=clang++-3.9
 
 before_install:
     - chmod +x script_travis.sh
