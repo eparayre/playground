@@ -3,7 +3,7 @@ local Playground = {}
 
 function Playground.CatchArguments()
     if os.getenv("APPVEYOR") then
-        return " --reporter junit --out $(OutDir)/../$(TargetName).results.xml"
+        return " --reporter junit --out $(OutDir)$(TargetName).results.xml"
     else
         return ""
     end
