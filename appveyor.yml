@@ -19,4 +19,4 @@ build:
   project: build\%VS_VERSION%\Playground.sln
 
 on_finish:
-    - ps: (New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path output\%VS_VERSION%\bin\debug\Playground.results.xml))
+    - ps: (New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path output\$($env:VS_VERSION)\bin\debug\Playground.results.xml))
