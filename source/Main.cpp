@@ -4,7 +4,7 @@
 #include "catch.hpp"
 
 //-----------------------------------------------------------------------------
-int main( int argc, char* const argv[] )
+int main( int argc, char* argv[] )
 {
     CompilerInfo::DumpSupportedFeatures();
 
