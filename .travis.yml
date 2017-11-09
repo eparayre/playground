@@ -63,7 +63,7 @@ matrix:
           addons:
             apt:
                 sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-3.8' ]
-                packages: [ 'clang-3.8' ]
+                packages: [ 'clang-3.8', 'libstdc++-6-dev' ]
 
         - os: linux
           compiler: clang
@@ -71,7 +71,7 @@ matrix:
           addons:
             apt:
                 sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-3.9' ]
-                packages: [ 'clang-3.9' ]
+                packages: [ 'clang-3.9', 'libstdc++-6-dev' ]
 
         - os: linux
           compiler: clang
@@ -79,7 +79,7 @@ matrix:
           addons:
             apt:
                 sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-4.0' ]
-                packages: [ 'clang-4.0' ]
+                packages: [ 'clang-4.0', 'libstdc++-6-dev' ]
 
         - os: linux
           compiler: clang
@@ -87,7 +87,7 @@ matrix:
           addons:
             apt:
                 sources: [ 'ubuntu-toolchain-r-test', 'llvm-toolchain-trusty-5.0' ]
-                packages: [ 'clang-5.0' ]
+                packages: [ 'clang-5.0', 'libstdc++-6-dev' ]
 
         - os: osx
           compiler: clang
